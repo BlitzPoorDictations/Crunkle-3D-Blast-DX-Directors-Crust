@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bryaqpxl6ysdd"]
+
+[ext_resource type="Material" uid="uid://bcl87jb20lkph" path="res://materials/grass.tres" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://xpfakl30gurw" path="res://object shows/player.tscn" id="1_ig7tw"]
+[ext_resource type="Material" uid="uid://cxvsgojsll6jc" path="res://materials/brick.tres" id="2_h2yge"]
+
+[sub_resource type="Environment" id="Environment_ig7tw"]
+ambient_light_source = 2
+ambient_light_color = Color(0.3226914, 0.3225375, 0.5590176, 1)
+
+[node name="Main" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.204979, -0.3564453, -1.5601292)
+size = Vector3(22.554703, 0.28710938, 25.011784)
+material = ExtResource("1_0xm2m")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.012166, 2.1903675, 5.7358265)
+size = Vector3(3.4576435, 2.5620117, 2.5649455)
+material = ExtResource("2_h2yge")
+
+[node name="CharacterBody3D" parent="CSGCombiner3D" instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ig7tw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.8738464, -0.13806619, 0.46618685, 0.2655303, 0.6676943, 0.69546944, -0.40729117, 0.73152035, -0.5468015, 0, 0, 0)

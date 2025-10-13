@@ -1,12 +1,16 @@
 What's poppin crunkle meisters? Welcome to...
-# CRUNKLE 3d BLAST
+# CHRONO CRUNKLE!
 
-Movement - WASD
-Sprint - LShift
-Jump - Space
+Controls:
+[WASD] - Move
+[Shift] - Sprint
+[Space] - Jump
+[R] - Respawn
+[E] - Record movements
+[Q] - Playback movements
 
-Objective: Figure out what this has to do with coins.
+The story: You are cylinderthey, a cylinder. You found a cylinder-shaped object that lets you cylindrically record your positions and watch them interact with your current environment.
 
-This is a rough 3d framework made in like 3 hours so don't take it seriously
+"It's good!" - Kid Binx of The Daily Binxicle
 
-Demo video: https://youtu.be/xBhBV0pDv-c
+Demo video: https://youtu.be/SGnp_jHOdpw

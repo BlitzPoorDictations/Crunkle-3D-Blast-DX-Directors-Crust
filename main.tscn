@@ -1,11 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://bryaqpxl6ysdd"]
+[gd_scene load_steps=13 format=3 uid="uid://bryaqpxl6ysdd"]
 
 [ext_resource type="Material" uid="uid://bcl87jb20lkph" path="res://materials/grass.tres" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://xpfakl30gurw" path="res://object shows/player.tscn" id="1_ig7tw"]
 [ext_resource type="Material" uid="uid://cxvsgojsll6jc" path="res://materials/brick.tres" id="2_h2yge"]
-[ext_resource type="Material" uid="uid://1hpe5v3cg522" path="res://materials/huh block.tres" id="4_1bvp3"]
+[ext_resource type="Material" uid="uid://ol0vp3onen72" path="res://materials/funny.tres" id="3_kek77"]
+[ext_resource type="PackedScene" uid="uid://2ts5o3ul4qpl" path="res://timer_ui.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dxjrbq2tsjo60" path="res://object shows/buttom.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://4olgxefq0g2r" path="res://object shows/dorr.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://cuu2x61wlpibs" path="res://object shows/checkpoint.tscn" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://bu5ulc2ka6s2d" path="res://object shows/evil checkpoint.tscn" id="8_kek77"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_272bh"]
+sky_top_color = Color(0.7930626, 0.022194052, 0.3367829, 1)
+sky_horizon_color = Color(0.87275004, 0.5329252, 0, 1)
+ground_bottom_color = Color(0.16335237, 0.18796399, 0.05901394, 1)
+ground_horizon_color = Color(0.8263733, 0.6172397, 3.85046e-07, 1)
+
+[sub_resource type="Sky" id="Sky_5vw27"]
+sky_material = SubResource("ProceduralSkyMaterial_272bh")
 
 [sub_resource type="Environment" id="Environment_ig7tw"]
+background_mode = 2
+sky = SubResource("Sky_5vw27")
 ambient_light_source = 2
 ambient_light_color = Color(0.3226914, 0.3225375, 0.5590176, 1)
 
@@ -15,50 +31,309 @@ ambient_light_color = Color(0.3226914, 0.3225375, 0.5590176, 1)
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.204979, -0.3564453, -1.5601292)
-size = Vector3(22.554703, 0.28710938, 25.011784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48233032, -0.3564453, 9.773216)
+size = Vector3(26, 0.28710938, 47.678474)
 material = ExtResource("1_0xm2m")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018372297, 1.0103896, -30.695885)
-size = Vector3(2.9727483, 2.9670105, 22.89238)
-material = ExtResource("2_h2yge")
-
-[node name="CharacterBody3D" parent="CSGCombiner3D" instance=ExtResource("1_ig7tw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.963946, -35.555466)
-size = Vector3(2, 2, 2)
-material = ExtResource("4_1bvp3")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.108456, -42.832054)
-size = Vector3(2, 2, 2)
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 8.177594, 4.25887, -24.669756)
+size = Vector3(8.759888, 8, 22.89238)
 material = ExtResource("2_h2yge")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.087525, -44.849014)
-size = Vector3(2, 2, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44320488, -0.7265692, -38.2857)
+size = Vector3(24, 1, 49)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -8.668735, 4.25887, -24.669756)
+size = Vector3(9.548096, 8, 22.89238)
 material = ExtResource("2_h2yge")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.076639, -46.854885)
-size = Vector3(2, 2, 2)
+transform = Transform3D(1, 0, 0, 0, 2.25, 0, 0, 0, 2.2, -12.943205, 3.8971753, -14.772666)
+size = Vector3(1, 4, 43.986572)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.20234966, 7.25887, -24.669756)
+size = Vector3(8, 4, 22.89238)
 material = ExtResource("2_h2yge")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.9999283, 0.011701415, 0.00255507, -0.009917327, 0.6892901, 0.72441757, 0.0067155133, -0.724391, 0.6893567, -0.04901743, 0.0024206638, -56.058376)
-size = Vector3(2, 2, 25.908325)
+transform = Transform3D(1, 0, 0, 0, 2.25, 0, 0, 0, 2.2, 12.056795, 3.8971753, -14.676122)
+size = Vector3(1, 4, 43.976685)
 material = ExtResource("2_h2yge")
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07329106, -9.055443, -71.915985)
-size = Vector3(2, 2, 15.438232)
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(5.463399e-15, -2.25, 9.616505e-08, -4.3711385e-08, -9.835061e-08, -2.1999998, 0.99999994, 0, -9.6165046e-08, -0.42472982, 3.8971753, 33.975334)
+size = Vector3(1, 10.732056, 4)
+material = ExtResource("3_kek77")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.32646465, 8.665761, -49.615944)
+size = Vector3(25.75177, 3.8758545, 27)
 material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.3711385e-08, 0, 2.1999998, 0, 2.2499998, 0, -0.99999994, 0, -9.6165046e-08, 0.046814874, 2.7721753, -71.05789)
+size = Vector3(34, 3, 0.9135132)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-1, 0, -1.923301e-07, 0, 2.2499998, 0, 8.742277e-08, 0, -2.1999998, -6.6716905, 2.7721753, -62.7478)
+size = Vector3(12, 3, 0.3757019)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.51767, -0.3564453, -74.56013)
+size = Vector3(26, 0.28710938, 25.011784)
+material = ExtResource("1_0xm2m")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 2.2499998, 0, 0, 0, 2.1999998, 28.046814, 2.7721753, -87.05789)
+size = Vector3(56, 3, 0.9135132)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.3711385e-08, 0, 2.1999998, 0, 2.2499998, 0, -0.99999994, 0, -9.6165046e-08, 26.046814, 2.7721753, -70.4675)
+size = Vector3(18.819214, 3, 0.9135132)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 2.2499998, 0, 0, 0, 2.1999998, 19.546814, 2.7721753, -62.05789)
+size = Vector3(15, 3, 0.9135132)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.405457, -0.3564453, -82.97271)
+size = Vector3(40, 0.28710938, 6.3375936)
+material = ExtResource("1_0xm2m")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 2.2499998, 0, 0, 0, 2.1999998, 40.546814, 2.7721753, -79.05789)
+size = Vector3(31, 3, 0.9135132)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.40546, 0.5, -82.97271)
+size = Vector3(6, 2, 6.3375936)
+material = ExtResource("1_0xm2m")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.40546, 2.5, -68.97271)
+size = Vector3(6, 2, 6.3375936)
+material = ExtResource("1_0xm2m")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.40546, 4.5, -54.97271)
+size = Vector3(6, 2, 6.3375936)
+material = ExtResource("1_0xm2m")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.40546, 6.5, -54.97271)
+size = Vector3(6, 2, 6.3375936)
+material = ExtResource("1_0xm2m")
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.40546, 8.5, -54.97271)
+size = Vector3(6, 2, 6.3375936)
+material = ExtResource("1_0xm2m")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.40546, 10.5, -67.97271)
+size = Vector3(6, 2, 6.3375936)
+material = ExtResource("1_0xm2m")
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.40546, 12.5, -106.46321)
+size = Vector3(6, 2, 57.318604)
+material = ExtResource("1_0xm2m")
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, -2.1999998, 0, 2.2499998, 0, 1, 0, -9.6165046e-08, 92.56252, 16.252415, -106.15164)
+size = Vector3(46.1875, 3.42688, 0.4446869)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, -2.1999998, 0, 2.2499998, 0, 1, 0, -9.6165046e-08, 98.56252, 16.252415, -106.15164)
+size = Vector3(46.1875, 3.42688, 0.4446869)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, -2.1999998, 0, 2.2499998, 0, 1, 0, -9.6165046e-08, 95.55839, 21.232655, -106.15164)
+size = Vector3(46.1875, 3, 3.1757202)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.40546, 12.5, -135.73372)
+size = Vector3(22, 2, 16)
+material = ExtResource("1_0xm2m")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ig7tw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(-0.8738464, -0.13806619, 0.46618685, 0.2655303, 0.6676943, 0.69546944, -0.40729117, 0.73152035, -0.5468015, 0, 0, 0)
+transform = Transform3D(0.44843492, -0.72411716, 0.52398527, 0.2655303, 0.66769433, 0.6954695, -0.8534634, -0.1727389, 0.49169245, 0, 0, 0)
+light_color = Color(1, 0.4666667, 0, 1)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78710926, 0)
+
+[node name="Timer UI" parent="." instance=ExtResource("5_lquwl")]
+mouse_filter = 2
+
+[node name="Button" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17206264, -9)
+
+[node name="Dorr" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.042455196, 2.1638505, -14.061885)
+button = NodePath("../Button")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -41)
+light_energy = 0.556
+omni_range = 14.112
+omni_attenuation = -0.389
+
+[node name="Chesspoint" parent="." instance=ExtResource("8_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -50)
+
+[node name="Button2" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.18415356, -41)
+
+[node name="Button3" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.17682576, -41)
+
+[node name="Dorr2" parent="." node_paths=PackedStringArray("button", "button2") instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.5998535, 3.1154633, -46)
+size = Vector3(0.11338806, 7, 25)
+button = NodePath("../Button2")
+button2 = NodePath("../Button3")
+lock = true
+
+[node name="Dorr3" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.9001465, 3.1154633, -55)
+size = Vector3(0.11338806, 7, 12)
+button = NodePath("../Button4")
+
+[node name="Button4" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.18498373, -50)
+
+[node name="Dorr4" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.0998535, 3.1154633, -55)
+size = Vector3(0.11338806, 7, 12)
+button = NodePath("../Button5")
+lock = true
+
+[node name="Button5" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.18268526, -59)
+
+[node name="Button6" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -0.18268526, -50)
+
+[node name="Dorr5" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.0998535, 3.1154633, -62)
+size = Vector3(0.11338806, 7, 12)
+button = NodePath("../Button6")
+
+[node name="Chesspoint2" parent="." instance=ExtResource("8_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9964013, 1, -68.71786)
+
+[node name="Button7" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -0.18268526, -76)
+
+[node name="Button8" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -0.18268526, -72)
+
+[node name="Button9" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -0.18268526, -68)
+
+[node name="Dorr6" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.099854, 2.6154633, -83)
+size = Vector3(0.11338806, 6, 8)
+button = NodePath("../Button7")
+
+[node name="Dorr7" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.099854, 2.6154633, -83)
+size = Vector3(0.11338806, 6, 8)
+button = NodePath("../Button8")
+
+[node name="Dorr8" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.099854, 2.6154633, -83)
+size = Vector3(0.11338806, 6, 8)
+button = NodePath("../Button9")
+
+[node name="Chesspoint3" parent="." instance=ExtResource("8_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.996403, 1, -83.01407)
+
+[node name="Button10" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.47353, 1.54062, -83)
+
+[node name="Button11" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.47353, 3.5406199, -69)
+
+[node name="Button12" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.47353, 5.54062, -55)
+
+[node name="Button13" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.47353, 7.54062, -55)
+
+[node name="Button14" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.47353, 9.54062, -55)
+
+[node name="Button15" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.47353, 11.54062, -68)
+
+[node name="Button16" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.47353, 13.54062, -81)
+
+[node name="Button17" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.47353, 13.54062, -137)
+
+[node name="Dorr9" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 95.41202, 16.478302, -84)
+size = Vector3(0.11338806, 6, 6.439026)
+button = NodePath("../Button10")
+
+[node name="Dorr10" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 95.41202, 16.478302, -90)
+size = Vector3(0.11338806, 6, 6.439026)
+button = NodePath("../Button11")
+
+[node name="Dorr11" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 95.41202, 16.478302, -96)
+size = Vector3(0.11338806, 6, 6.439026)
+button = NodePath("../Button12")
+
+[node name="Dorr12" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 95.41202, 16.478302, -102)
+size = Vector3(0.11338806, 6, 6.439026)
+button = NodePath("../Button13")
+
+[node name="Dorr13" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 95.41202, 16.478302, -108)
+size = Vector3(0.11338806, 6, 6.439026)
+button = NodePath("../Button14")
+
+[node name="Dorr14" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 95.41202, 16.478302, -114)
+size = Vector3(0.11338806, 6, 6.439026)
+button = NodePath("../Button15")
+
+[node name="Dorr15" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 95.41202, 16.478302, -120)
+size = Vector3(0.11338806, 6, 6.439026)
+button = NodePath("../Button16")
+
+[node name="Dorr16" parent="." node_paths=PackedStringArray("button") instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.55001307, 3.7793138, 10.967057)
+size = Vector3(0.11338806, 8, 24.96643)
+button = NodePath("../Button17")
+
+[node name="Chesspoint4" parent="." instance=ExtResource("8_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.61676, 15, -126.01407)
+
+[node name="Chesspoint5" parent="." instance=ExtResource("8_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 15, -137)

@@ -4,7 +4,8 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_55lhl"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 6
 script = ExtResource("1_pk1ti")
 topspd = 8.0
 sprintmult = 2.0
@@ -20,3 +21,13 @@ spring_length = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 current = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="Record Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Record Timer" to="." method="_on_record_timer_timeout"]

@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxjrbq2tsjo60"]
+
+[ext_resource type="Script" uid="uid://buji2nyvrkuc2" path="res://object shows/buttom.gd" id="1_cbd56"]
+[ext_resource type="AudioStream" uid="uid://brmis14um2nj" path="res://ear effects/Button.wav" id="2_0qgvx"]
+[ext_resource type="Material" uid="uid://csf2ktcwps3qu" path="res://materials/buttom red.tres" id="2_old3o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffs0d"]
+albedo_color = Color(0.16143227, 0.17858332, 0.24747592, 1)
+metallic = 0.5
+roughness = 0.25
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ffs0d"]
+height = 0.1390686
+radius = 0.87109375
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0qgvx"]
+height = 0.100128174
+radius = 1.0
+
+[node name="Button" type="CSGCylinder3D"]
+radius = 1.0
+height = 0.1
+sides = 20
+material = SubResource("StandardMaterial3D_ffs0d")
+script = ExtResource("1_cbd56")
+
+[node name="Buttof Buttob" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08795369, 0)
+radius = 0.863
+height = 0.13
+sides = 20
+material = ExtResource("2_old3o")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11997986, 0)
+shape = SubResource("CylinderShape3D_ffs0d")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_0qgvx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0045318604, 0)
+shape = SubResource("CylinderShape3D_0qgvx")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

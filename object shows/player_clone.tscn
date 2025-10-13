@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://jplgv5rn2rd4"]
+
+[ext_resource type="Script" uid="uid://c838p7upgyipx" path="res://object shows/player_clone.gd" id="1_u3c21"]
+[ext_resource type="AudioStream" uid="uid://b015ib2r1081g" path="res://ear effects/Blaypack.wav" id="2_fv2ul"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fv2ul"]
+transparency = 1
+albedo_color = Color(0.827353, 1, 0.8238552, 0.5686275)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_55lhl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3c21"]
+emission_enabled = true
+emission = Color(1.1058325, 0, 0.40680867, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_u3c21"]
+material = SubResource("StandardMaterial3D_u3c21")
+radius = 0.1
+height = 0.2
+radial_segments = 4
+rings = 1
+
+[node name="PlayerClone" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_u3c21")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+radius = 0.49
+height = 1.98
+material = SubResource("StandardMaterial3D_fv2ul")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_55lhl")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 150
+lifetime = 3.0
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+mesh = SubResource("SphereMesh_u3c21")
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_fv2ul")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
